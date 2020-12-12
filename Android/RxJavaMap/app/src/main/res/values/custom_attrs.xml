@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DogStyle">
+        <attr name="sex">
+            <enum name="girl" value="1"/>
+            <enum name="boy" value="2"/>
+        </attr>
+
+
+
+    </declare-styleable>
+
+
+
+</resources>

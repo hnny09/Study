@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="content_bg_day">#FFFFFFFF</color>
+    <color name="content_text_color_day">#FF0000FF</color>
+
+
+    <color name="content_bg_night">#1F1F1F</color>
+    <color name="content_text_color_night">#FFFFFF88</color>
+
+
+</resources>

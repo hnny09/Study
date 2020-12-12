@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="customTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+       <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+    </style>
+
+    <style name="customTheme.Day">
+        <item name="content_bg">@color/content_bg_day</item>
+        <item name="content_text_color">@color/content_text_color_day</item>
+    </style>
+
+
+    <style name="customTheme.Night">
+        <item name="content_bg">@color/content_bg_night</item>
+        <item name="content_text_color">@color/content_text_color_night</item>
+    </style>
+
+</resources>

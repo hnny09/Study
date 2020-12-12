@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/content_bg_night"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/bv_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="相机"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/bv_seconder"
+        android:text="相册"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/bv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="取消"
+        android:textAllCaps="false"/>
+
+</LinearLayout>
