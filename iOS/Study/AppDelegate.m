@@ -7,15 +7,43 @@
 
 #import "AppDelegate.h"
 
+typedef struct {
+    long bbb;
+    int ccc;
+} aaa;
+
 @interface AppDelegate ()
+{
+    NSString *aa;
+    char *th;
+//    objc_class cc;
+}
+@property(nonatomic, strong)NSString *test;
+@property(nonatomic, strong)NSString *testa;
 
 @end
 
 @implementation AppDelegate
-
+@synthesize test = aa,testa,window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+//    self->aa = @"aaaa";
+//    NSLog(@"test:%@",self.test);
+//    self.test = @"bbbbb";
+//    NSLog(@"test:%@",self->aa);
+//    self.testa = @"cccc";
+//    NSLog(@"self.testa:%@",self->testa);
+//    NSLog(@"self.testa:%@",self.testa);
+//    char aa = 'c';
+//    char *bb = &aa;
+//    aaa *a1 = NULL;
+//    aaa a2 = {.bbb=0,.ccc=4};
+    
+    
+//    NSLog(@"%c",*th);
+    NSLog(@"window:%@",window);
+    
     return YES;
 }
 

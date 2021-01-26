@@ -30,6 +30,19 @@
     
     Node *fifth = [self reverse:fourth];
     [self printNode:fifth];
+    
+    Node *sixth = [self getListWithNumber:@"1233344666789"];
+    [self printNode:sixth];
+    Node *sixthRes = [self deleteDuplicates:sixth];
+    [self printNode:sixthRes];
+}
+
+//82. 删除排序链表中的重复元素
++ (Node *)deleteDuplicates:(Node *)header{
+    
+    
+    
+    return header;
 }
 
 /*
@@ -46,7 +59,7 @@
     while (end.next != NULL) {
         for (int i = 0; i < k && end != NULL; i++) {
             end = end.next;
-        }
+    }
     
         if (end == NULL) {
             break;

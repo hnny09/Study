@@ -8,6 +8,7 @@
 #import "ViewController.h"
 #import "Leet.h"
 #import "StudyNode.h"
+#import "Person.h"
 
 @interface ViewController ()
 
@@ -18,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = UIColor.whiteColor;
+    NSLog(@"=======================Person=======================\n");
+    [Person start];
     NSLog(@"=======================Leet=======================\n");
     [Leet start];
     NSLog(@"=======================Node=======================\n");

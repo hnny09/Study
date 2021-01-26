@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D80B24E625A80E0300A0C665 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B24E525A80E0300A0C665 /* Person.m */; };
+		D80B24F025AD361600A0C665 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B24EF25AD361600A0C665 /* MyView.m */; };
 		D8858540256B9B9200BEAAFC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D885853F256B9B9200BEAAFC /* AppDelegate.m */; };
 		D8858543256B9B9200BEAAFC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8858542256B9B9200BEAAFC /* SceneDelegate.m */; };
 		D8858546256B9B9200BEAAFC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8858545256B9B9200BEAAFC /* ViewController.m */; };
@@ -39,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D80B24E425A80E0300A0C665 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		D80B24E525A80E0300A0C665 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		D80B24EE25AD361600A0C665 /* MyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		D80B24EF25AD361600A0C665 /* MyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 		D885853B256B9B9200BEAAFC /* Study.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Study.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D885853E256B9B9200BEAAFC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D885853F256B9B9200BEAAFC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -90,6 +96,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D80B24E325A80DF300A0C665 /* OC */ = {
+			isa = PBXGroup;
+			children = (
+				D80B24E425A80E0300A0C665 /* Person.h */,
+				D80B24E525A80E0300A0C665 /* Person.m */,
+			);
+			path = OC;
+			sourceTree = "<group>";
+		};
+		D80B24ED25AD35FB00A0C665 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D80B24EE25AD361600A0C665 /* MyView.h */,
+				D80B24EF25AD361600A0C665 /* MyView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D8858532256B9B9200BEAAFC = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +137,8 @@
 		D885853D256B9B9200BEAAFC /* Study */ = {
 			isa = PBXGroup;
 			children = (
+				D80B24ED25AD35FB00A0C665 /* View */,
+				D80B24E325A80DF300A0C665 /* OC */,
 				D88585832570993600BEAAFC /* Book */,
 				D885853E256B9B9200BEAAFC /* AppDelegate.h */,
 				D885853F256B9B9200BEAAFC /* AppDelegate.m */,
@@ -291,6 +317,8 @@
 			files = (
 				D88585862570993600BEAAFC /* Leet.m in Sources */,
 				D8858546256B9B9200BEAAFC /* ViewController.m in Sources */,
+				D80B24F025AD361600A0C665 /* MyView.m in Sources */,
+				D80B24E625A80E0300A0C665 /* Person.m in Sources */,
 				D8858540256B9B9200BEAAFC /* AppDelegate.m in Sources */,
 				D88585922577647A00BEAAFC /* StudyNode.m in Sources */,
 				D8858551256B9B9400BEAAFC /* main.m in Sources */,
