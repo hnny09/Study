@@ -1,0 +1,3 @@
+[submodule "local-af"]
+	path = local-af
+	url = https://github.com/AFNetworking/AFNetworking.git
