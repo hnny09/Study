@@ -1,0 +1,6 @@
+framework module Pods_DynamicWithStatic {
+  umbrella header "Pods-DynamicWithStatic-umbrella.h"
+
+  export *
+  module * { export * }
+}

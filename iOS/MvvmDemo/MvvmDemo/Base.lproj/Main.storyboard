@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="account" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y8c-jx-41A">
+                                <rect key="frame" x="102" y="90.5" width="150" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="6VI-U3-wsV"/>
+                                    <constraint firstAttribute="height" constant="40" id="I0n-ge-gyp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账号：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8l-oP-mQo">
+                                <rect key="frame" x="30" y="100" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg2-U9-Fbz">
+                                <rect key="frame" x="30" y="161" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzt-72-Dxb">
+                                <rect key="frame" x="107" y="428" width="200" height="40"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="5ds-1R-WgZ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="sH5-qc-zEL"/>
+                                </constraints>
+                                <state key="normal" title="login">
+                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="pwd" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LIL-a6-bp5">
+                                <rect key="frame" x="102" y="151.5" width="150" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BL3-db-BN8"/>
+                                    <constraint firstAttribute="width" constant="150" id="NvI-38-0jb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Y8c-jx-41A" firstAttribute="centerY" secondItem="q8l-oP-mQo" secondAttribute="centerY" id="5rL-a8-afw"/>
+                            <constraint firstItem="vzt-72-Dxb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Q5q-DF-Fsg"/>
+                            <constraint firstItem="q8l-oP-mQo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="aV7-h5-Zed"/>
+                            <constraint firstItem="q8l-oP-mQo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="bsn-hi-Jdw"/>
+                            <constraint firstItem="LIL-a6-bp5" firstAttribute="leading" secondItem="Y8c-jx-41A" secondAttribute="leading" id="hAx-64-k1I"/>
+                            <constraint firstItem="vzt-72-Dxb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iEG-Oe-smK"/>
+                            <constraint firstItem="Tg2-U9-Fbz" firstAttribute="leading" secondItem="q8l-oP-mQo" secondAttribute="leading" id="jZC-pG-MOT"/>
+                            <constraint firstItem="Tg2-U9-Fbz" firstAttribute="top" secondItem="q8l-oP-mQo" secondAttribute="bottom" constant="40" id="nfl-vb-Li1"/>
+                            <constraint firstItem="Tg2-U9-Fbz" firstAttribute="centerY" secondItem="LIL-a6-bp5" secondAttribute="centerY" id="tqw-Yl-NIS"/>
+                            <constraint firstItem="Y8c-jx-41A" firstAttribute="leading" secondItem="q8l-oP-mQo" secondAttribute="trailing" constant="20" id="xza-84-QiI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="accountTextField" destination="Y8c-jx-41A" id="c7P-ji-U02"/>
+                        <outlet property="loginButton" destination="vzt-72-Dxb" id="tJo-ze-0Ly"/>
+                        <outlet property="pwdTextField" destination="LIL-a6-bp5" id="nIm-LW-bTd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="129"/>
+        </scene>
+    </scenes>
+</document>
