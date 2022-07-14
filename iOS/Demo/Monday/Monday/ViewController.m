@@ -11,8 +11,33 @@
 #import "StudyString.h"
 #import "SortValues.h"
 #import "StudyNode.h"
+#import "dispatch_once_study.h"
+#import "Person.h"
+#import <objc/runtime.h>
+#import "CStudy.h"
+#import "CStudy+test.h"
+#import "StringNoArc.h"
+#import <ContactsUI/ContactsUI.h>
+#import <malloc/malloc.h>
 
-@interface ViewController ()
+typedef void (malloc_logger_t)(uint32_t type, uintptr_t arg1, uintptr_t arg2, uintptr_t arg3, uintptr_t result, uint32_t num_hot_frames_to_skip);
+//定义函数bba_malloc_stack_logger
+void bba_malloc_stack_logger(uint32_t type, uintptr_t arg1, uintptr_t arg2, uintptr_t arg3, uintptr_t result, uint32_t backtrace_to_skip);
+// 保存malloc_logger到临时变量origin_malloc_logger
+//orgin_malloc_logger = malloc_logger;
+
+//malloc_logger = (malloc_logger_t *)bba_malloc_stack_logger;
+
+void bba_malloc_stack_logger(uint32_t type, uintptr_t arg1, uintptr_t arg2, uintptr_t arg3, uintptr_t result, uint32_t backtrace_to_skip)
+{
+//    if (orgin_malloc_logger != NULL) {
+//        orgin_malloc_logger(type, arg1, arg2, arg3, result, backtrace_to_skip);
+//    }
+    //大块内存监控
+}
+
+
+@interface ViewController ()<CNContactPickerDelegate>
     
 @end
 
@@ -27,12 +52,92 @@
     [self print:reverse];
     Node *rotate = [self rotateList:[self getLink] index:2];
     [self print:rotate];
+    NSArray *array = [NSThread callStackSymbols];
+    NSLog(@"array:%@",array);
+//    dyld_get_image_name();
+    
+    cTest();
     
 //    [StudyString study];
     [self textView];
     [SortValues study];
     [[StudyNode alloc] study];
+    [dispatch_once_study shareInstance];
+    [dispatch_once_study shareInstance];
+    [self studyLLDB];
+    [self studyPerson];
+    NSLog(@"checkCPU:%d",checkCPU());
+    NSString *value = @"ddddd";
+    NSLog(@"name指针地址:%p,name指针指向的对象内存地址:%p",&value,value);
+    [self log:value];
+    
+    [self testCopy];
+    [StringNoArc testString];
+    
+}
 
+
+
+- (void)testCopy{
+    NSObject *obj1 = [NSObject new];
+    
+    NSArray *array1 = @[obj1];
+    
+    NSArray *array1c = [array1 copy];
+    NSLog(@"array1:%p",array1);
+    NSLog(@"array1c:%p",array1c);
+    NSLog(@"obj1:%p",obj1);
+    NSLog(@"obj1c:%p",array1c.firstObject);
+    
+}
+
+- (void)log:(NSString *)value{
+    NSLog(@"2--name指针地址:%p,name指针指向的对象内存地址:%p",&value,value);
+}
+
+int checkCPU()
+{
+    union w
+    {
+        int a;//在ios中，4 Byte
+        char b;//在ios中，1 Byte
+    } c;
+    c.a = 1;
+    return(c.b ==1);//如果c.b == 1，表示第一位是0x01，那就是小端，如果返回0，就是大端
+}
+
+- (void)studyPerson{
+    Person *person = [Person alloc];
+    Class pClass     = object_getClass(person);
+    NSLog(@"%@ - %p",person,pClass);
+}
+
+
+-(void)studyLLDB{
+//    NSString * str = @"First";
+//    [self printString:str];
+//    (lldb) watchpoint set variable str
+//    (lldb) image lookup -a 0x0000000106280098
+//    Address: LLDBTest[0x0000000100003098] (LLDBTest.__DATA.__cfstring + 32)
+//    Summary: @"Second"
+//    str = @"Second";
+    
+//    [self printString:str];
+    
+    NSString * str1 = [NSString stringWithFormat:@"First"];
+    NSString * str2 = [NSString stringWithFormat:@"Second"];
+    NSString * str3 = [NSString stringWithString:@"Second".mutableCopy];
+    
+    [self printString:str1];
+    [self printString:str2];
+    [self printString:str3];
+
+}
+
+- (void)printString:(NSString *)str
+{
+    NSLog(@"---------------------");
+    NSLog(@"%@",str);
 }
 
 - (void)textView{
@@ -54,6 +159,78 @@
     NSLog(@"anchorPoint:%@",NSStringFromCGPoint(view3.layer.anchorPoint));
     NSLog(@"frame:%@",NSStringFromCGRect(view3.frame));
     NSLog(@"position:%@",NSStringFromCGPoint(view3.layer.position));
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(250, 200, 100, 100);
+    button.backgroundColor = UIColor.grayColor;
+    [self.view addSubview:button];
+    [button setTitle:@"test" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(responseToButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    if ([self isEvenNumber:2])
+        {
+            NSLog(@"First------1");
+        }
+        else
+        {
+            NSLog(@"Second------1");
+        }
+}
+
+static CNContactPickerViewController *contactVc;
+
+- (void)responseToButton:(UIButton *)button{
+//    button.backgroundColor = UIColor.blueColor;
+      
+//    Class
+    NSString *stirng = @"aaaa";
+    NSUInteger leng = stirng.length;
+    
+//    NSArray *array = @[@"a", @"bb", @"ccc", @"dddd", @"eeeee", @"ffffff", @"ggggggg", @"hh hh", @"ii  ii"];
+    NSArray *array = @[[[CNPhoneNumber alloc] initWithStringValue:@"ffffff"]];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"stringValue.length >= 4"];
+            array = [array filteredArrayUsingPredicate:predicate];
+        
+        NSLog(@"array:%@", array);
+    
+    contactVc = [[CNContactPickerViewController alloc] init];
+            contactVc.delegate = self;
+            contactVc.displayedPropertyKeys = @[CNContactPhoneNumbersKey];
+            contactVc.predicateForEnablingContact = [NSPredicate predicateWithFormat:@"phoneNumbers.@count > 0"];
+            contactVc.predicateForSelectionOfContact = [NSPredicate predicateWithFormat:@"phoneNumbers.@count < 2"];
+            contactVc.predicateForSelectionOfProperty = [NSPredicate predicateWithFormat:@"(key == 'phoneNumbers') AND (value.@stringValue.@length == 4)"];
+            [self presentViewController:contactVc animated:YES completion:nil];
+    
+}
+
+
+- (void)contactPickerDidCancel:(CNContactPickerViewController *)picker {
+    
+}
+
+- (void)contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact {
+//    SYTContactModel *temp = [self formatContact:contact];
+//    NSArray *array = [NSArray arrayWithObject:[temp mj_keyValues]];
+//    [[RootViewController shareInstance] dismissViewControllerAnimated:YES completion:^{
+//     self.resolveBlock([array copy]);
+//    }];
+}
+
+- (void)contactPicker:(CNContactPickerViewController *)picker didSelectContactProperty:(CNContactProperty *)contactProperty {
+    
+}
+
+
+- (BOOL)isEvenNumber:(NSInteger)num
+{
+    if (num % 2 == 0)
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
 }
     
 - (Node *)getLink{
@@ -133,6 +310,9 @@
     return pre;
 }
 
+- (void)dealloc{
+//    [super dealloc];
+}
 
 
 @end

@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-Monday/Pods-Monday-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
+${BUILT_PRODUCTS_DIR}/OOMDetector/OOMDetector.framework
+${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework
+${BUILT_PRODUCTS_DIR}/fishhook/fishhook.framework
+${BUILT_PRODUCTS_DIR}/matrix-wechat/Matrix.framework

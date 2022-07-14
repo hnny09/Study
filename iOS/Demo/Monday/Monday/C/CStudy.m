@@ -32,6 +32,10 @@ void testArray(void){
     }
 }
 
+
+
+@end
+
 void cTest(void){
     
     char* buf1 = "this is a test";
@@ -41,8 +45,6 @@ void cTest(void){
 //    int a[6] = {0};
     
 }
-
-@end
 
 
 

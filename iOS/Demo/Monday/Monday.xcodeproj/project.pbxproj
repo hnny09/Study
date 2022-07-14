@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,9 +18,21 @@
 		7A8AA5AD233128220047F75D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A8AA5AC233128220047F75D /* Assets.xcassets */; };
 		7A8AA5B0233128220047F75D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A8AA5AE233128220047F75D /* LaunchScreen.storyboard */; };
 		7A8AA5B3233128220047F75D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8AA5B2233128220047F75D /* main.m */; };
+		961C88EF2797D600004B65C7 /* AAAClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 961C88EE2797D600004B65C7 /* AAAClass.m */; };
+		961C88F22797D63D004B65C7 /* AABClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 961C88F12797D63D004B65C7 /* AABClass.m */; };
+		961C88F52797D67B004B65C7 /* AACClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 961C88F42797D67B004B65C7 /* AACClass.m */; };
+		9630810F27911B86008DF80D /* Person+A.m in Sources */ = {isa = PBXBuildFile; fileRef = 9630810E27911B86008DF80D /* Person+A.m */; };
+		96462BF92724401C006C45D4 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 96462BF82724401C006C45D4 /* Person.m */; };
+		96462BFC2727E9BA006C45D4 /* CStudy+test.m in Sources */ = {isa = PBXBuildFile; fileRef = 96462BFB2727E9BA006C45D4 /* CStudy+test.m */; };
+		9674C7CF26DA75AC00964E57 /* dispatch_once_study.m in Sources */ = {isa = PBXBuildFile; fileRef = 9674C7CE26DA75AC00964E57 /* dispatch_once_study.m */; };
+		96E94788277CB53600B4E8AE /* StringNoArc.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E94787277CB53600B4E8AE /* StringNoArc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ACC71E887B6E4EE48D222C50 /* Pods_Monday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148588B734CAAB375D0A6D24 /* Pods_Monday.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12D9956C86196095BCC76525 /* Pods-Monday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monday.release.xcconfig"; path = "Target Support Files/Pods-Monday/Pods-Monday.release.xcconfig"; sourceTree = "<group>"; };
+		148588B734CAAB375D0A6D24 /* Pods_Monday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58DD75B17766C64008917E27 /* Pods-Monday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monday.debug.xcconfig"; path = "Target Support Files/Pods-Monday/Pods-Monday.debug.xcconfig"; sourceTree = "<group>"; };
 		7A8744AC264D54CD001E19B5 /* StudyString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyString.h; sourceTree = "<group>"; };
 		7A8744AD264D54CD001E19B5 /* StudyString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyString.m; sourceTree = "<group>"; };
 		7A8744AF265A1D3A001E19B5 /* ViewController+One.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController+One.h"; sourceTree = "<group>"; };
@@ -42,6 +54,22 @@
 		7A8AA5AF233128220047F75D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A8AA5B1233128220047F75D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A8AA5B2233128220047F75D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		961C88ED2797D600004B65C7 /* AAAClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAAClass.h; sourceTree = "<group>"; };
+		961C88EE2797D600004B65C7 /* AAAClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAAClass.m; sourceTree = "<group>"; };
+		961C88F02797D63D004B65C7 /* AABClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AABClass.h; sourceTree = "<group>"; };
+		961C88F12797D63D004B65C7 /* AABClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AABClass.m; sourceTree = "<group>"; };
+		961C88F32797D67B004B65C7 /* AACClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AACClass.h; sourceTree = "<group>"; };
+		961C88F42797D67B004B65C7 /* AACClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AACClass.m; sourceTree = "<group>"; };
+		9630810D27911B86008DF80D /* Person+A.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+A.h"; sourceTree = "<group>"; };
+		9630810E27911B86008DF80D /* Person+A.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+A.m"; sourceTree = "<group>"; };
+		96462BF72724401B006C45D4 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		96462BF82724401C006C45D4 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		96462BFA2727E9BA006C45D4 /* CStudy+test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CStudy+test.h"; sourceTree = "<group>"; };
+		96462BFB2727E9BA006C45D4 /* CStudy+test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CStudy+test.m"; sourceTree = "<group>"; };
+		9674C7CD26DA75AC00964E57 /* dispatch_once_study.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dispatch_once_study.h; sourceTree = "<group>"; };
+		9674C7CE26DA75AC00964E57 /* dispatch_once_study.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dispatch_once_study.m; sourceTree = "<group>"; };
+		96E94786277CB53600B4E8AE /* StringNoArc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringNoArc.h; sourceTree = "<group>"; };
+		96E94787277CB53600B4E8AE /* StringNoArc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringNoArc.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +77,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACC71E887B6E4EE48D222C50 /* Pods_Monday.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F8D561A32EC477C5D9A13AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58DD75B17766C64008917E27 /* Pods-Monday.debug.xcconfig */,
+				12D9956C86196095BCC76525 /* Pods-Monday.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7A8744AB264D54B9001E19B5 /* String */ = {
 			isa = PBXGroup;
 			children = (
 				7A8744AC264D54CD001E19B5 /* StudyString.h */,
 				7A8744AD264D54CD001E19B5 /* StudyString.m */,
+				96E94786277CB53600B4E8AE /* StringNoArc.h */,
+				96E94787277CB53600B4E8AE /* StringNoArc.m */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -88,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				7A874500266D0162001E19B5 /* CStudy.h */,
+				96462BFA2727E9BA006C45D4 /* CStudy+test.h */,
+				96462BFB2727E9BA006C45D4 /* CStudy+test.m */,
 				7A874501266D0162001E19B5 /* CStudy.m */,
 			);
 			path = C;
@@ -98,6 +140,8 @@
 			children = (
 				7A8AA5A2233128220047F75D /* Monday */,
 				7A8AA5A1233128220047F75D /* Products */,
+				5F8D561A32EC477C5D9A13AA /* Pods */,
+				A89CE775119B65D2D297F99C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +156,8 @@
 		7A8AA5A2233128220047F75D /* Monday */ = {
 			isa = PBXGroup;
 			children = (
+				9674C7CC26DA758600964E57 /* OC */,
+				964C99B326DA6E58000C7910 /* UI */,
 				7A8744FF266D014C001E19B5 /* C */,
 				7A8744B4265A3B96001E19B5 /* Node */,
 				7A8744B0265A363C001E19B5 /* Sort */,
@@ -130,6 +176,40 @@
 			path = Monday;
 			sourceTree = "<group>";
 		};
+		964C99B326DA6E58000C7910 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		9674C7CC26DA758600964E57 /* OC */ = {
+			isa = PBXGroup;
+			children = (
+				9674C7CD26DA75AC00964E57 /* dispatch_once_study.h */,
+				9674C7CE26DA75AC00964E57 /* dispatch_once_study.m */,
+				96462BF72724401B006C45D4 /* Person.h */,
+				96462BF82724401C006C45D4 /* Person.m */,
+				9630810D27911B86008DF80D /* Person+A.h */,
+				9630810E27911B86008DF80D /* Person+A.m */,
+				961C88ED2797D600004B65C7 /* AAAClass.h */,
+				961C88EE2797D600004B65C7 /* AAAClass.m */,
+				961C88F02797D63D004B65C7 /* AABClass.h */,
+				961C88F12797D63D004B65C7 /* AABClass.m */,
+				961C88F32797D67B004B65C7 /* AACClass.h */,
+				961C88F42797D67B004B65C7 /* AACClass.m */,
+			);
+			path = OC;
+			sourceTree = "<group>";
+		};
+		A89CE775119B65D2D297F99C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				148588B734CAAB375D0A6D24 /* Pods_Monday.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +217,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A8AA5B6233128220047F75D /* Build configuration list for PBXNativeTarget "Monday" */;
 			buildPhases = (
+				217761EE69AE9DF4C33640A6 /* [CP] Check Pods Manifest.lock */,
 				7A8AA59C233128220047F75D /* Sources */,
 				7A8AA59D233128220047F75D /* Frameworks */,
 				7A8AA59E233128220047F75D /* Resources */,
+				CA1CEC8FC39FD8C49F8318DE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,18 +277,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		217761EE69AE9DF4C33640A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Monday-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA1CEC8FC39FD8C49F8318DE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Monday/Pods-Monday-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Monday/Pods-Monday-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Monday/Pods-Monday-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7A8AA59C233128220047F75D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				961C88F52797D67B004B65C7 /* AACClass.m in Sources */,
+				961C88EF2797D600004B65C7 /* AAAClass.m in Sources */,
+				9674C7CF26DA75AC00964E57 /* dispatch_once_study.m in Sources */,
 				7A8AA5A8233128220047F75D /* ViewController.m in Sources */,
+				96462BF92724401C006C45D4 /* Person.m in Sources */,
 				7A8AA5B3233128220047F75D /* main.m in Sources */,
+				9630810F27911B86008DF80D /* Person+A.m in Sources */,
 				7A8AA5A5233128220047F75D /* AppDelegate.m in Sources */,
 				7A8744BD265A3C88001E19B5 /* StudyNode.m in Sources */,
 				7A8744AE264D54CD001E19B5 /* StudyString.m in Sources */,
+				961C88F22797D63D004B65C7 /* AABClass.m in Sources */,
 				7A8744B3265A3657001E19B5 /* SortValues.m in Sources */,
 				7A8744B7265A3BC1001E19B5 /* Node.m in Sources */,
+				96462BFC2727E9BA006C45D4 /* CStudy+test.m in Sources */,
+				96E94788277CB53600B4E8AE /* StringNoArc.m in Sources */,
 				7A874502266D0162001E19B5 /* CStudy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,10 +479,15 @@
 		};
 		7A8AA5B7233128220047F75D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58DD75B17766C64008917E27 /* Pods-Monday.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6ZA44MJL83;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Monday",
+				);
 				INFOPLIST_FILE = Monday/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_GENERATE_MAP_FILE = YES;
@@ -366,10 +503,15 @@
 		};
 		7A8AA5B8233128220047F75D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12D9956C86196095BCC76525 /* Pods-Monday.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6ZA44MJL83;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Monday",
+				);
 				INFOPLIST_FILE = Monday/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_GENERATE_MAP_FILE = YES;

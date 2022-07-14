@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CStudy : NSObject
 
+
+
 @end
+
+void cTest(void);
 
 NS_ASSUME_NONNULL_END
