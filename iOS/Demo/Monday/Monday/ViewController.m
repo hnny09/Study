@@ -19,6 +19,8 @@
 #import "StringNoArc.h"
 #import <ContactsUI/ContactsUI.h>
 #import <malloc/malloc.h>
+#include <dlfcn.h>
+#import <libkern/OSAtomicQueue.h>
 
 typedef void (malloc_logger_t)(uint32_t type, uintptr_t arg1, uintptr_t arg2, uintptr_t arg3, uintptr_t result, uint32_t num_hot_frames_to_skip);
 //定义函数bba_malloc_stack_logger
@@ -53,7 +55,7 @@ void bba_malloc_stack_logger(uint32_t type, uintptr_t arg1, uintptr_t arg2, uint
     Node *rotate = [self rotateList:[self getLink] index:2];
     [self print:rotate];
     NSArray *array = [NSThread callStackSymbols];
-    NSLog(@"array:%@",array);
+//    NSLog(@"array:%@",array);
 //    dyld_get_image_name();
     
     cTest();
@@ -66,13 +68,13 @@ void bba_malloc_stack_logger(uint32_t type, uintptr_t arg1, uintptr_t arg2, uint
     [dispatch_once_study shareInstance];
     [self studyLLDB];
     [self studyPerson];
-    NSLog(@"checkCPU:%d",checkCPU());
-    NSString *value = @"ddddd";
-    NSLog(@"name指针地址:%p,name指针指向的对象内存地址:%p",&value,value);
-    [self log:value];
+//    NSLog(@"checkCPU:%d",checkCPU());
+//    NSString *value = @"ddddd";
+//    NSLog(@"name指针地址:%p,name指针指向的对象内存地址:%p",&value,value);
+//    [self log:value];
     
-    [self testCopy];
-    [StringNoArc testString];
+//    [self testCopy];
+//    [StringNoArc testString];
     
 }
 
@@ -169,11 +171,11 @@ int checkCPU()
     
     if ([self isEvenNumber:2])
         {
-            NSLog(@"First------1");
+//            NSLog(@"First------1");
         }
         else
         {
-            NSLog(@"Second------1");
+//            NSLog(@"Second------1");
         }
 }
 
@@ -183,23 +185,16 @@ static CNContactPickerViewController *contactVc;
 //    button.backgroundColor = UIColor.blueColor;
       
 //    Class
-    NSString *stirng = @"aaaa";
-    NSUInteger leng = stirng.length;
     
 //    NSArray *array = @[@"a", @"bb", @"ccc", @"dddd", @"eeeee", @"ffffff", @"ggggggg", @"hh hh", @"ii  ii"];
-    NSArray *array = @[[[CNPhoneNumber alloc] initWithStringValue:@"ffffff"]];
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"stringValue.length >= 4"];
-            array = [array filteredArrayUsingPredicate:predicate];
-        
-        NSLog(@"array:%@", array);
     
     contactVc = [[CNContactPickerViewController alloc] init];
-            contactVc.delegate = self;
-            contactVc.displayedPropertyKeys = @[CNContactPhoneNumbersKey];
-            contactVc.predicateForEnablingContact = [NSPredicate predicateWithFormat:@"phoneNumbers.@count > 0"];
-            contactVc.predicateForSelectionOfContact = [NSPredicate predicateWithFormat:@"phoneNumbers.@count < 2"];
-            contactVc.predicateForSelectionOfProperty = [NSPredicate predicateWithFormat:@"(key == 'phoneNumbers') AND (value.@stringValue.@length == 4)"];
-            [self presentViewController:contactVc animated:YES completion:nil];
+//    contactVc.delegate = self;
+//    contactVc.displayedPropertyKeys = @[CNContactPhoneNumbersKey];
+//    contactVc.predicateForEnablingContact = [NSPredicate predicateWithFormat:@"phoneNumbers.@count > 0"];
+//    contactVc.predicateForSelectionOfContact = [NSPredicate predicateWithFormat:@"phoneNumbers.@count < 2"];
+//    contactVc.predicateForSelectionOfProperty = [NSPredicate predicateWithFormat:@"(key == 'phoneNumbers') AND (value.@stringValue.@length == 4)"];
+    [self presentViewController:contactVc animated:YES completion:nil];
     
 }
 
@@ -308,6 +303,88 @@ static CNContactPickerViewController *contactVc;
     
     
     return pre;
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSMutableArray<NSString *> * symbolNames = [NSMutableArray array];
+    while (true) {
+        SymbolNode * node = OSAtomicDequeue(&symboList, offsetof(SymbolNode, next));
+        if (node == NULL) break;
+        Dl_info info;
+        dladdr(node->pc, &info);
+        NSString * name = @(info.dli_sname);
+                
+        // 添加 _
+        BOOL isObjc = [name hasPrefix:@"+["] || [name hasPrefix:@"-["];
+        NSString * symbolName = isObjc ? name : [@"_" stringByAppendingString:name];
+                
+        //去重
+        if (![symbolNames containsObject:symbolName]) {
+            [symbolNames addObject:symbolName];
+        }
+    }
+
+    NSArray * symbolAry = [[symbolNames reverseObjectEnumerator] allObjects];
+    NSLog(@"symbolAry:\n%@",symbolAry);
+      
+      //将结果写入到文件
+    NSString * funcString = [symbolAry componentsJoinedByString:@"\n"];
+    NSString * filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"binary.order"];
+    NSLog(@"filePath:%@",filePath);
+    NSData * fileContents = [funcString dataUsingEncoding:NSUTF8StringEncoding];
+    BOOL result = [[NSFileManager defaultManager] createFileAtPath:filePath contents:fileContents attributes:nil];
+    if (result) {
+        NSLog(@"%@",filePath);
+    }else{
+        NSLog(@"文件写入出错");
+    }
+    
+}
+
+
+
+void __sanitizer_cov_trace_pc_guard_init(uint32_t *start,
+                                                    uint32_t *stop) {
+  static uint64_t N;  // Counter for the guards.
+  if (start == stop || *start) return;  // Initialize only once.
+  printf("INIT: %p %p\n", start, stop);
+  for (uint32_t *x = start; x < stop; x++)
+    *x = ++N;  // Guards should start from 1.
+}
+
+//原子队列
+static OSQueueHead symboList = OS_ATOMIC_QUEUE_INIT;
+//定义符号结构体
+typedef struct{
+    void * pc;
+    void * next;
+}SymbolNode;
+
+void __sanitizer_cov_trace_pc_guard(uint32_t *guard) {
+//    文章地址：https://www.jianshu.com/p/3f9ed86a45cb
+    // load 方法guard为0
+//    if (!*guard) return;  // Duplicate the guard check.
+
+    void *PC = __builtin_return_address(0);
+    
+    // 获取
+    SymbolNode * node = malloc(sizeof(SymbolNode));
+    *node = (SymbolNode){PC,NULL};
+
+        //入队
+        // offsetof 用在这里是为了入队添加下一个节点找到 前一个节点next指针的位置
+    OSAtomicEnqueue(&symboList, node, offsetof(SymbolNode, next));
+
+    // 打印
+//    Dl_info info;
+//    dladdr(PC, &info);
+//
+//    printf("\nfname：%s \nfbase：%p \nsname：%s\nsaddr：%p \n",info.dli_fname,info.dli_fbase,info.dli_sname,info.dli_saddr);
+//
+//    char PcDescr[1024];
+//    //__sanitizer_symbolize_pc(PC, "%p %F %L", PcDescr, sizeof(PcDescr));
+//    printf("guard: %p %x PC %s\n", guard, *guard, PcDescr);
 }
 
 - (void)dealloc{

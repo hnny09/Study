@@ -22,13 +22,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     NSArray *array = [[WCCrashReportInfoUtil sharedInstance] getBinaryImages];
-    NSLog(@"%@",array);
+//    NSLog(@"%@",array);
     return YES;
 }
 
-void static __attribute__((constructor)) before_main() {
-    NSLog(@"-----------before_main-----------------");
-}
+//void static __attribute__((constructor)) before_main() {
+//    NSLog(@"-----------before_main-----------------");
+//}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
